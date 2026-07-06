@@ -9,7 +9,7 @@ Designed and implemented an adaptive long-term memory framework for autonomous A
 
 **Libraries:** NumPy, Pandas, Matplotlib
 
-**Development Environment:** Google Colaboratory (Google Colab), Jupyter Notebook
+**Development Environment:** Google Colaboratory (Google Colab)
 
 **Core AI Components:**
 
@@ -50,7 +50,7 @@ Install the required libraries:
 Run all notebook cells sequentially.
 
 
-## Screenshots
+## OUTCOMES
 
 ### Memory Decay Curves
 
@@ -70,7 +70,7 @@ Run all notebook cells sequentially.
 
 ### Evaluation Results
 
-![Evaluation Table](evaluation_table.png)
+![Evaluation Table](memory_decay_results.csv)
 
 
 ## License
