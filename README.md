@@ -1,367 +1,83 @@
-# 🧠 Memory Decay Laws for Autonomous AI Agents
+# Learning Memory Decay Laws for Autonomous AI Agents: An Adaptive Long-Term Memory Framework
 
-<div align="center">
+Designed and implemented an adaptive long-term memory framework for autonomous AI agents that models human-like forgetting through importance-aware exponential decay, memory compression, and selective retrieval. Evaluated memory retention, storage efficiency, and hallucination reduction across multi-week simulations to study adaptive forgetting strategies.
 
-## Learning **What to Forget** Instead of Remembering Everything
 
-A biologically inspired long-term memory architecture for autonomous LLM agents.
+## Tech Stack
 
----
+**Programming Language:** Python
 
-![Python](https://img.shields.io/badge/Python-3.11-blue)
+**Libraries:** NumPy, Pandas, Matplotlib
 
-![Research](https://img.shields.io/badge/Research-AI%20Memory-red)
+**Development Environment:** Google Colaboratory (Google Colab), Jupyter Notebook
 
-![Status](https://img.shields.io/badge/Status-Prototype-success)
+**Core AI Components:**
 
-![License](https://img.shields.io/badge/License-MIT-green)
+Long-Term Memory Store
+Importance-Based Memory Scoring
+Exponential Memory Decay Model
+Memory Compression Module
+Memory Retrieval Engine
+Performance Evaluation Framework
 
-</div>
+**Algorithms & Techniques:**
 
----
+Exponential Forgetting Curve (Ebbinghaus-inspired)
+Threshold-Based Selective Forgetting
+Keyword-Based Memory Retrieval
+Time-Based Memory Strength Modeling
+Multi-Week Memory Simulation
 
-# Motivation
+**Evaluation Metrics:**
 
-Current Large Language Model agents suffer from two opposite problems.
+Recall Accuracy
+Storage Efficiency
+Hallucination Reduction
+Memory Retention Rate
 
-✔ Remember everything forever
+## Run Locally
 
-or
+To run tests, run the following command.
 
-✔ Forget everything abruptly.
+Open the notebook in Google Colaboratory.
 
-Humans do neither.
+Install the required libraries:
 
-Human memory gradually decays according to cognitive laws.
-
-This project investigates
-
-> **Can AI agents learn what to forget?**
-
-instead of storing unlimited memories forever.
-
----
-
-# Research Question
-
-Can adaptive memory decay improve
-
-- Recall accuracy
-
-- Storage efficiency
-
-- Memory scalability
-
-- Hallucination reduction
-
-for long-term autonomous AI agents?
-
----
-
-# Proposed Architecture
-
-```
-Incoming Observation
-          │
-          ▼
- Importance Scoring
-          │
-          ▼
- Long-term Memory Store
-          │
-          ▼
- Time-based Decay
-          │
-          ▼
- Memory Compression
-          │
-          ▼
- Retrieval Engine
-          │
-          ▼
- Autonomous Agent
+```bash
+   !pip install numpy pandas matplotlib
 ```
 
----
+Run all notebook cells sequentially.
 
-# Features
 
-✔ Long-Term Memory Store
+## Screenshots
 
-✔ Importance-aware Encoding
+### Memory Decay Curves
 
-✔ Exponential Forgetting Curves
+![Memory Decay Curves](memory_decay_curves.png)
 
-✔ Memory Compression
+### Recall Accuracy
 
-✔ Retrieval Simulation
+![Recall Accuracy](recall_accuracy.png)
 
-✔ Multi-week Evaluation
+### Storage Efficiency
 
-✔ Hallucination Estimation
+![Storage Efficiency](storage_efficiency.png)
 
----
+### Hallucination Reduction
 
-# Mathematical Model
+![Hallucination Reduction](hallucination_reduction.png)
 
-Memory strength follows
+### Evaluation Results
 
-```
-M(t)=I⋅e−λt
-```
+![Evaluation Table](evaluation_table.png)
 
-where
 
-```
-I = Importance
+## License
 
-λ = Decay Constant
+[MIT](https://choosealicense.com/licenses/mit/)
 
-t = Time
-```
 
-Future work replaces the fixed λ with
+## Support
 
-```
-λ=f(context,usage,reward)
-```
-
-allowing agents to **learn their own forgetting policy.**
-
----
-
-# Experimental Results
-
-## Memory Initialization
-
-All memories begin with
-
-```
-Strength = 1.0
-```
-
-while maintaining different importance scores.
-
----
-
-## Memory Decay
-
-![Memory Decay](images/memory_decay.png)
-
-Observation
-
-Higher importance memories survive longer while less important memories disappear rapidly.
-
----
-
-## Recall Accuracy
-
-![Recall](images/recall_accuracy.png)
-
-Observation
-
-Recall decreases sharply after two weeks because of aggressive exponential decay.
-
----
-
-## Storage Efficiency
-
-![Storage](images/storage_efficiency.png)
-
-Observation
-
-The memory database eventually becomes empty.
-
-Although storage cost approaches zero,
-
-knowledge retention also becomes zero.
-
----
-
-## Hallucination Reduction
-
-![Hallucination](images/hallucination_reduction.png)
-
-Observation
-
-Removing obsolete memories completely eliminates retrieval hallucinations.
-
-However,
-
-the agent simultaneously loses all useful knowledge.
-
----
-
-# Experimental Insights
-
-The current implementation demonstrates an important trade-off
-
-```
-Higher Forgetting
-
-↓
-
-Lower Storage
-
-↓
-
-Lower Hallucinations
-
-↓
-
-Lower Recall
-```
-
-This validates the need for
-
-Adaptive Memory Decay.
-
----
-
-# Future Work
-
-Instead of
-
-```
-Fixed Exponential Decay
-```
-
-we propose
-
-```
-Learnable Memory Decay Laws
-```
-
-using
-
-- Reinforcement Learning
-
-- Meta-learning
-
-- Retrieval Feedback
-
-- Usage Frequency
-
-- Context Similarity
-
-- Emotional Importance
-
-- User Feedback
-
-The agent should learn
-
-**when**
-
-to remember,
-
-**when**
-
-to compress,
-
-and
-
-**when**
-
-to forget.
-
----
-
-# Applications
-
-Large Language Models
-
-Autonomous AI Agents
-
-Personal AI Assistants
-
-Healthcare AI
-
-Robotics
-
-Long-term Conversational Systems
-
-AI Operating Systems
-
-Scientific Knowledge Bases
-
-Digital Twins
-
-Human-AI Memory Systems
-
----
-
-# Repository Structure
-
-```
-MemoryDecay/
-
-│
-
-├── notebook.ipynb
-
-├── memory.py
-
-├── evaluation.py
-
-├── results/
-
-│     recall.csv
-
-│     storage.csv
-
-│
-
-├── images/
-
-│     memory_decay.png
-
-│     recall_accuracy.png
-
-│     storage_efficiency.png
-
-│     hallucination_reduction.png
-
-│
-
-└── README.md
-```
-
----
-
-# Future Publication
-
-This repository is an initial research prototype for
-
-> **Memory Decay Laws for Autonomous AI Agents**
-
-towards
-
-NeurIPS
-
-ICLR
-
-ICML
-
-AAAI
-
-and Cognitive AI research.
-
----
-
-# Citation
-
-```
-@misc{MemoryDecay2026,
-
-title={Memory Decay Laws for Autonomous AI Agents},
-
-year={2026}
-
-}
-```
-
----
-
-## ⭐ If you find this work useful,
-
-please consider starring the repository.
+For support, email ashmitharaja23@gmail.com
