@@ -76,9 +76,19 @@ Run all notebook cells sequentially.
 
 The proposed **Memory Decay for AI Agents** framework models human-like forgetting by combining **importance-weighted exponential decay**, memory pruning, and retrieval evaluation. Initially, five memories with different importance values (I \in [0,1]) are inserted into the long-term memory store, each starting with an identical initial strength (S_0 = 1.0). The memory strength at time (t) is computed using the exponential forgetting equation
 
-[
-S(t)=I \cdot e^{-\lambda t}\cdot (1+\alpha A),
-]
+The memory strength at time **t** is computed as
+
+```text
+S(t) = I × e^(−λt) × (1 + αA)
+```
+
+where
+
+- **S(t)** = Memory strength at time *t*
+- **I ∈ [0,1]** = Importance score
+- **λ = 0.12** = Decay constant
+- **A** = Number of successful retrievals
+- **α = 0.05** = Retrieval reinforcement coefficient
 
 where (I) denotes the importance score, (\lambda =0.12) is the decay constant, (A) is the number of successful retrievals, and (\alpha =0.05) is the reinforcement coefficient. Since all memories have (A=0), the decay depends solely on importance and elapsed time.
 
@@ -86,24 +96,33 @@ The **Memory Decay Curves** demonstrate that all memories follow an exponential 
 
 The **Importance-Based Forgetting** stage applies a pruning threshold
 
-[
-S(t)<\theta,\qquad \theta =0.20,
-]
+```text
+Forget Memory if
+
+S(t) < θ
+
+where θ = 0.20
+```
 
 to determine whether a memory should remain in long-term storage. After 30 simulated days, every memory satisfies (S(t)<0.20), resulting in
 
-[
-N_{\text{remaining}}=0,\qquad
-N_{\text{forgotten}}=5.
-]
+```text
+Nremaining = 0
+
+Nforgotten = 5
+```
 
 Consequently, the **Memory Compression** module has no surviving memories to compress, and the compression stage produces an empty output. Likewise, the **Retrieval Module** returns **"No memories available"** for every query because the searchable memory store becomes empty after pruning.
 
 The **Recall Accuracy** evaluation measures the average retained memory strength over eight simulated weeks,
 
-[
-R=\frac{1}{N}\sum_{i=1}^{N}S_i.
-]
+```text
+        N
+       Σ Si
+      i=1
+R = --------
+        N
+```
 
 The results show a rapid decline from **0.70** during the initial week to **0.28** after one week, reaching **0** by the second week. This behavior indicates that the current decay configuration aggressively forgets information, making long-term recall impossible under the selected parameters.
 
@@ -111,9 +130,9 @@ The **Storage Efficiency** plot illustrates progressive memory pruning. Initiall
 
 The **Estimated Hallucination Reduction** is modeled as
 
-[
-H=1-\frac{N_{\text{stored}}}{N_{\text{total}}},
-]
+```text
+H = 1 − (Nstored / Ntotal)
+```
 
 where fewer retained memories are assumed to reduce the likelihood of recalling obsolete or irrelevant information. As storage decreases from five memories to zero, the estimated hallucination reduction increases from **0.0** to **1.0**, indicating perfect elimination of stale memory references in this simplified simulation.
 
