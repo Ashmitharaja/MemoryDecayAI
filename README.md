@@ -116,7 +116,9 @@ Consequently, the **Memory Compression** module has no surviving memories to com
 
 The **Recall Accuracy** evaluation measures the average retained memory strength over eight simulated weeks,
 
-`R = (Σ Si) / N`
+```text
+R = (Σ Si) / N
+```
 
 The results show a rapid decline from **0.70** during the initial week to **0.28** after one week, reaching **0** by the second week. This behavior indicates that the current decay configuration aggressively forgets information, making long-term recall impossible under the selected parameters.
 
